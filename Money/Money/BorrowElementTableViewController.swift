@@ -43,14 +43,36 @@ class BorrowElementTableViewController: UITableViewController {
         
         cell.firstname.text = borrow.firstname
         cell.lastname.text = borrow.lastname
+        cell.reason.text = borrow.reason
         cell.currency.text = borrow.currency.rawValue
         cell.value.text = borrow.value.description
         
         return cell
     }
     
+    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        if editingStyle == UITableViewCellEditingStyle.Delete {
+            borrows?.removeAtIndex(indexPath.row)
+            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Automatic)
+            saveBorrows()
+        }
+    }
+    
     func loadBorrows() -> () {
         borrows = NSKeyedUnarchiver.unarchiveObjectWithFile(Borrow.ArchiveURL.path!) as? [Borrow]
+    }
+    
+    func saveBorrows() {
+        var brws:[Borrow]
+        if let list = borrows {
+            brws = list
+        } else {
+            brws = [Borrow]()
+        }
+        let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(brws, toFile: Borrow.ArchiveURL.path!)
+        if(!isSuccessfulSave){
+            print("Failed Storing Borrows")
+        }
     }
 
 }

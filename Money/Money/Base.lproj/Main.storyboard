@@ -9,16 +9,16 @@
         <scene sceneID="Udp-Kn-4yz">
             <objects>
                 <tableViewController id="VhJ-Xn-KM0" customClass="BorrowElementTableViewController" customModule="Money" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="gOP-lB-FJN">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="65" sectionHeaderHeight="28" sectionFooterHeight="28" id="gOP-lB-FJN">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="BorrowElementCell" id="dOD-Qt-C9b" customClass="BorrowElementCell" customModule="Money">
-                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="BorrowElementCell" rowHeight="65" id="dOD-Qt-C9b" customClass="BorrowElementCell" customModule="Money">
+                                <rect key="frame" x="0.0" y="92" width="600" height="65"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="BorrowElementCell" tableViewCell="dOD-Qt-C9b" id="zsU-UN-AYf">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="64.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lastname" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zG3-4c-xj7">
@@ -39,6 +39,12 @@
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Reason" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9h8-wD-wdJ">
+                                            <rect key="frame" x="8" y="38" width="584" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Firstname" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0PV-x9-ihb">
                                             <rect key="frame" x="8" y="11" width="76" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -49,10 +55,13 @@
                                     <constraints>
                                         <constraint firstItem="zG3-4c-xj7" firstAttribute="leading" secondItem="0PV-x9-ihb" secondAttribute="trailing" constant="8" id="5Sd-GS-g99"/>
                                         <constraint firstItem="zG3-4c-xj7" firstAttribute="top" secondItem="zsU-UN-AYf" secondAttribute="top" constant="11" id="9cO-eR-b75"/>
+                                        <constraint firstAttribute="trailing" secondItem="9h8-wD-wdJ" secondAttribute="trailing" constant="8" id="BpA-TZ-3N1"/>
                                         <constraint firstItem="0PV-x9-ihb" firstAttribute="leading" secondItem="zsU-UN-AYf" secondAttribute="leading" constant="8" id="DkR-8S-UMb"/>
+                                        <constraint firstItem="9h8-wD-wdJ" firstAttribute="top" secondItem="JaA-Qq-G0s" secondAttribute="bottom" constant="6" id="Igb-C9-1m4"/>
                                         <constraint firstItem="JiW-Uj-XGx" firstAttribute="leading" secondItem="JaA-Qq-G0s" secondAttribute="trailing" constant="8" id="SkH-d3-ntI"/>
                                         <constraint firstAttribute="trailing" secondItem="JiW-Uj-XGx" secondAttribute="trailing" constant="8" id="TeG-el-wvz"/>
                                         <constraint firstItem="0PV-x9-ihb" firstAttribute="top" secondItem="zsU-UN-AYf" secondAttribute="top" constant="11" id="c23-NA-tCW"/>
+                                        <constraint firstItem="9h8-wD-wdJ" firstAttribute="leading" secondItem="zsU-UN-AYf" secondAttribute="leading" constant="8" id="epd-9M-86G"/>
                                         <constraint firstItem="JaA-Qq-G0s" firstAttribute="top" secondItem="zsU-UN-AYf" secondAttribute="top" constant="11" id="i35-Kj-8ZS"/>
                                         <constraint firstItem="JiW-Uj-XGx" firstAttribute="top" secondItem="zsU-UN-AYf" secondAttribute="top" constant="11" id="xhu-UT-2lK"/>
                                     </constraints>
@@ -61,6 +70,7 @@
                                     <outlet property="currency" destination="JiW-Uj-XGx" id="Bq2-iW-ehh"/>
                                     <outlet property="firstname" destination="0PV-x9-ihb" id="9Ce-mI-Vjh"/>
                                     <outlet property="lastname" destination="zG3-4c-xj7" id="gfM-7l-5ZK"/>
+                                    <outlet property="reason" destination="9h8-wD-wdJ" id="ztE-uh-lGf"/>
                                     <outlet property="value" destination="JaA-Qq-G0s" id="WkO-Xa-1Ks"/>
                                 </connections>
                             </tableViewCell>

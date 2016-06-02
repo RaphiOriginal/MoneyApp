@@ -11,6 +11,7 @@ import UIKit
 class BorrowElementCell: UITableViewCell {
     @IBOutlet weak var firstname: UILabel!
     @IBOutlet weak var lastname: UILabel!
+    @IBOutlet weak var reason: UILabel!
     @IBOutlet weak var value: UILabel!
     @IBOutlet weak var currency: UILabel!
     
