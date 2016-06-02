@@ -47,7 +47,6 @@ class BorrowElementTableViewController: UITableViewController {
     }
     
     func loadBorrows() -> () {
-        print("load examples")
         borrows.append(Borrow(firstname: "Hans", lastname: "Joachim", value: 12.90, currency: .CHF))
         borrows.append(Borrow(firstname: "Sepp", lastname: "Blatter", value: 30000.05, currency: .CHF))
         borrows.append(Borrow(firstname: "Julia", lastname: "Bachmann", value: 1.00, currency: .CHF))

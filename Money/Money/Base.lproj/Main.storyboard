@@ -111,11 +111,6 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Lastname" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gIV-LO-cdW">
-                                <rect key="frame" x="0.0" y="125" width="600" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Firstname" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iEg-xp-iTF">
                                 <rect key="frame" x="0.0" y="87" width="600" height="30"/>
                                 <nil key="textColor"/>
@@ -131,6 +126,11 @@
                                 <rect key="frame" x="529" y="163" width="63" height="30"/>
                                 <state key="normal" title="Currency"/>
                             </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Lastname" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gIV-LO-cdW">
+                                <rect key="frame" x="0.0" y="125" width="600" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -150,6 +150,11 @@
                             <constraint firstItem="iEg-xp-iTF" firstAttribute="leading" secondItem="d6R-UH-DMg" secondAttribute="leading" id="wpS-tM-Mda"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="firstnameText" destination="iEg-xp-iTF" id="UcT-AC-CUv"/>
+                        <outlet property="lastnameText" destination="gIV-LO-cdW" id="PkK-PL-cI3"/>
+                        <outlet property="valueText" destination="XCx-8a-tYY" id="3T9-EE-Wb8"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0mK-2G-fec" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
