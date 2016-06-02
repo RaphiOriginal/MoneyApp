@@ -12,12 +12,14 @@ class Borrow: NSObject, NSCoding {
     
     var firstname:String
     var lastname:String
+    var reason:String
     var value:Double
     var currency:Currency
     
-    init?(firstname:String, lastname:String, value:Double, currency:Currency){
+    init?(firstname:String, lastname:String, reason:String, value:Double, currency:Currency){
         self.firstname = firstname
         self.lastname = lastname
+        self.reason = reason
         self.value = value
         self.currency = currency
         super.init()
@@ -28,6 +30,7 @@ class Borrow: NSObject, NSCoding {
     struct PropertyKey {
         static let firstname = "firstname"
         static let lastname = "lastname"
+        static let reason = "reason"
         static let value = "value"
         static let currency = "currency"
     }
@@ -42,6 +45,7 @@ class Borrow: NSObject, NSCoding {
     func encodeWithCoder(aCoder: NSCoder) {
         aCoder.encodeObject(firstname, forKey: PropertyKey.firstname)
         aCoder.encodeObject(lastname, forKey: PropertyKey.lastname)
+        aCoder.encodeObject(reason, forKey: PropertyKey.reason)
         aCoder.encodeDouble(value, forKey: PropertyKey.value)
         aCoder.encodeObject(currency.rawValue, forKey: PropertyKey.currency)
     }
@@ -49,11 +53,12 @@ class Borrow: NSObject, NSCoding {
     required convenience init?(coder aDecoder: NSCoder){
         let firstname = aDecoder.decodeObjectForKey(PropertyKey.firstname) as! String
         let lastname = aDecoder.decodeObjectForKey(PropertyKey.lastname) as! String
+        let reason = aDecoder.decodeObjectForKey(PropertyKey.reason) as! String
         let value = aDecoder.decodeDoubleForKey(PropertyKey.value) as Double
         let curr = aDecoder.decodeObjectForKey(PropertyKey.currency) as! String
         
         let currency = Currency(rawValue: curr)!
         
-        self.init(firstname: firstname, lastname: lastname, value: value, currency: currency)
+        self.init(firstname: firstname, lastname: lastname, reason: reason, value: value, currency: currency)
     }
 }

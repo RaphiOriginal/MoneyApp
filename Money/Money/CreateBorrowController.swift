@@ -15,6 +15,7 @@ class CreateBorrowController: UIViewController, UIPickerViewDataSource, UIPicker
     
     @IBOutlet weak var firstnameText: UITextField!
     @IBOutlet weak var lastnameText: UITextField!
+    @IBOutlet weak var reasonText: UITextField!
     @IBOutlet weak var valueText: UITextField!
     @IBOutlet weak var currencyPicker: UIPickerView!
     
@@ -29,6 +30,9 @@ class CreateBorrowController: UIViewController, UIPickerViewDataSource, UIPicker
         guard let lastname = lastnameText.text else {
             return
         }
+        guard let reason = reasonText.text else {
+            return
+        }
         guard let value = valueText.text else {
             return
         }
@@ -37,7 +41,7 @@ class CreateBorrowController: UIViewController, UIPickerViewDataSource, UIPicker
         }
         let curr = currencyPicker.selectedRowInComponent(0)
         
-        let borrow = Borrow(firstname: firstname, lastname: lastname, value: val, currency: pickerList[curr])
+        let borrow = Borrow(firstname: firstname, lastname: lastname, reason: reason, value: val, currency: pickerList[curr])
         borrows?.insert(borrow!, atIndex: 0)
         saveBorrows()
         dismissViewControllerAnimated(true, completion: nil)
