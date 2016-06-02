@@ -8,20 +8,28 @@
 
 /* Begin PBXBuildFile section */
 		2F80B9311D0049CE00973479 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F80B9301D0049CE00973479 /* AppDelegate.swift */; };
-		2F80B9331D0049CE00973479 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F80B9321D0049CE00973479 /* ViewController.swift */; };
 		2F80B9361D0049CE00973479 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F80B9341D0049CE00973479 /* Main.storyboard */; };
 		2F80B9381D0049CE00973479 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2F80B9371D0049CE00973479 /* Assets.xcassets */; };
 		2F80B93B1D0049CE00973479 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F80B9391D0049CE00973479 /* LaunchScreen.storyboard */; };
+		2F80B9431D0051E400973479 /* BorrowElementCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F80B9421D0051E400973479 /* BorrowElementCell.swift */; };
+		2F80B9451D00564E00973479 /* Borrow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F80B9441D00564E00973479 /* Borrow.swift */; };
+		2F80B9471D00569B00973479 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F80B9461D00569B00973479 /* Currency.swift */; };
+		2F80B94B1D0060B200973479 /* BorrowElementTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F80B94A1D0060B100973479 /* BorrowElementTableViewController.swift */; };
+		2F80B94F1D0067BA00973479 /* CreateBorrowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F80B94E1D0067B900973479 /* CreateBorrowController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		2F80B92D1D0049CE00973479 /* Money.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Money.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F80B9301D0049CE00973479 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		2F80B9321D0049CE00973479 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		2F80B9351D0049CE00973479 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2F80B9371D0049CE00973479 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2F80B93A1D0049CE00973479 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2F80B93C1D0049CE00973479 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2F80B9421D0051E400973479 /* BorrowElementCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BorrowElementCell.swift; sourceTree = "<group>"; };
+		2F80B9441D00564E00973479 /* Borrow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Borrow.swift; sourceTree = "<group>"; };
+		2F80B9461D00569B00973479 /* Currency.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
+		2F80B94A1D0060B100973479 /* BorrowElementTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BorrowElementTableViewController.swift; sourceTree = "<group>"; };
+		2F80B94E1D0067B900973479 /* CreateBorrowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateBorrowController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,8 +63,12 @@
 			isa = PBXGroup;
 			children = (
 				2F80B9301D0049CE00973479 /* AppDelegate.swift */,
-				2F80B9321D0049CE00973479 /* ViewController.swift */,
+				2F80B94A1D0060B100973479 /* BorrowElementTableViewController.swift */,
+				2F80B9441D00564E00973479 /* Borrow.swift */,
+				2F80B9461D00569B00973479 /* Currency.swift */,
 				2F80B9341D0049CE00973479 /* Main.storyboard */,
+				2F80B94E1D0067B900973479 /* CreateBorrowController.swift */,
+				2F80B9421D0051E400973479 /* BorrowElementCell.swift */,
 				2F80B9371D0049CE00973479 /* Assets.xcassets */,
 				2F80B9391D0049CE00973479 /* LaunchScreen.storyboard */,
 				2F80B93C1D0049CE00973479 /* Info.plist */,
@@ -136,8 +148,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2F80B9331D0049CE00973479 /* ViewController.swift in Sources */,
+				2F80B9431D0051E400973479 /* BorrowElementCell.swift in Sources */,
+				2F80B9471D00569B00973479 /* Currency.swift in Sources */,
+				2F80B94F1D0067BA00973479 /* CreateBorrowController.swift in Sources */,
+				2F80B9451D00564E00973479 /* Borrow.swift in Sources */,
 				2F80B9311D0049CE00973479 /* AppDelegate.swift in Sources */,
+				2F80B94B1D0060B200973479 /* BorrowElementTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
