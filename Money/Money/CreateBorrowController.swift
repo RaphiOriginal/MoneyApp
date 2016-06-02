@@ -8,16 +8,18 @@
 
 import UIKit
 
-class CreateBorrowController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
+class CreateBorrowController: UIViewController {
     
     var borrows:[Borrow]? = []
-    var pickerList:[Currency] = [.CHF, .$, .€]
+    var borrowTypeController = TypePickerClass()
+    var currencyController = CurrencyPickerClass()
     
     @IBOutlet weak var firstnameText: UITextField!
     @IBOutlet weak var lastnameText: UITextField!
     @IBOutlet weak var reasonText: UITextField!
     @IBOutlet weak var valueText: UITextField!
     @IBOutlet weak var currencyPicker: UIPickerView!
+    @IBOutlet weak var typePicker: UIPickerView!
     
  
     @IBAction func cancel(sender: UIBarButtonItem) {
@@ -40,8 +42,9 @@ class CreateBorrowController: UIViewController, UIPickerViewDataSource, UIPicker
             return
         }
         let curr = currencyPicker.selectedRowInComponent(0)
+        let borrowt = typePicker.selectedRowInComponent(0)
         
-        let borrow = Borrow(firstname: firstname, lastname: lastname, reason: reason, value: val, currency: pickerList[curr])
+        let borrow = Borrow(firstname: firstname, lastname: lastname, reason: reason, value: val.trimValue(), currency: currencyController.getPos(curr), borrowType: borrowTypeController.getPos(borrowt))
         borrows?.insert(borrow!, atIndex: 0)
         saveBorrows()
         dismissViewControllerAnimated(true, completion: nil)
@@ -54,24 +57,11 @@ class CreateBorrowController: UIViewController, UIPickerViewDataSource, UIPicker
         
         loadBorrows()
         
-        self.currencyPicker.dataSource = self
-        self.currencyPicker.delegate = self
-    }
-    
-    // MARK: - UIPickerViewDataSource
-    
-    func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
-        return 1
-    }
-    
-    func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return pickerList.count
-    }
-    
-    // MARK: - UIPickerViewDelegate
-    
-    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return pickerList[row].rawValue
+        self.currencyPicker.dataSource = currencyController
+        self.currencyPicker.delegate = currencyController
+        
+        self.typePicker.delegate = borrowTypeController
+        self.typePicker.dataSource = borrowTypeController
     }
     
     // Mark: NSCoding

@@ -16,6 +16,10 @@
 		2F80B9471D00569B00973479 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F80B9461D00569B00973479 /* Currency.swift */; };
 		2F80B94B1D0060B200973479 /* BorrowElementTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F80B94A1D0060B100973479 /* BorrowElementTableViewController.swift */; };
 		2F80B94F1D0067BA00973479 /* CreateBorrowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F80B94E1D0067B900973479 /* CreateBorrowController.swift */; };
+		2F80B9531D00C7B800973479 /* BorrowType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F80B9521D00C7B800973479 /* BorrowType.swift */; };
+		2F80B9551D00CA3800973479 /* TypePickerClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F80B9541D00CA3800973479 /* TypePickerClass.swift */; };
+		2F80B9571D00CC2600973479 /* CurrencyPickerClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F80B9561D00CC2600973479 /* CurrencyPickerClass.swift */; };
+		2F80B95A1D00CF1F00973479 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F80B9591D00CF1F00973479 /* Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +34,10 @@
 		2F80B9461D00569B00973479 /* Currency.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
 		2F80B94A1D0060B100973479 /* BorrowElementTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BorrowElementTableViewController.swift; sourceTree = "<group>"; };
 		2F80B94E1D0067B900973479 /* CreateBorrowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateBorrowController.swift; sourceTree = "<group>"; };
+		2F80B9521D00C7B800973479 /* BorrowType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BorrowType.swift; sourceTree = "<group>"; };
+		2F80B9541D00CA3800973479 /* TypePickerClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TypePickerClass.swift; sourceTree = "<group>"; };
+		2F80B9561D00CC2600973479 /* CurrencyPickerClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrencyPickerClass.swift; sourceTree = "<group>"; };
+		2F80B9591D00CF1F00973479 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +70,7 @@
 		2F80B92F1D0049CE00973479 /* Money */ = {
 			isa = PBXGroup;
 			children = (
+				2F80B9581D00CF0900973479 /* Helper */,
 				2F80B9511D007F7A00973479 /* Controller */,
 				2F80B9501D007F6500973479 /* Model */,
 				2F80B9301D0049CE00973479 /* AppDelegate.swift */,
@@ -78,6 +87,7 @@
 			children = (
 				2F80B9441D00564E00973479 /* Borrow.swift */,
 				2F80B9461D00569B00973479 /* Currency.swift */,
+				2F80B9521D00C7B800973479 /* BorrowType.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -87,9 +97,19 @@
 			children = (
 				2F80B94A1D0060B100973479 /* BorrowElementTableViewController.swift */,
 				2F80B94E1D0067B900973479 /* CreateBorrowController.swift */,
+				2F80B9541D00CA3800973479 /* TypePickerClass.swift */,
+				2F80B9561D00CC2600973479 /* CurrencyPickerClass.swift */,
 				2F80B9421D0051E400973479 /* BorrowElementCell.swift */,
 			);
 			name = Controller;
+			sourceTree = "<group>";
+		};
+		2F80B9581D00CF0900973479 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				2F80B9591D00CF1F00973479 /* Extensions.swift */,
+			);
+			name = Helper;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -167,9 +187,13 @@
 				2F80B9431D0051E400973479 /* BorrowElementCell.swift in Sources */,
 				2F80B9471D00569B00973479 /* Currency.swift in Sources */,
 				2F80B94F1D0067BA00973479 /* CreateBorrowController.swift in Sources */,
+				2F80B9571D00CC2600973479 /* CurrencyPickerClass.swift in Sources */,
 				2F80B9451D00564E00973479 /* Borrow.swift in Sources */,
+				2F80B95A1D00CF1F00973479 /* Extensions.swift in Sources */,
 				2F80B9311D0049CE00973479 /* AppDelegate.swift in Sources */,
 				2F80B94B1D0060B200973479 /* BorrowElementTableViewController.swift in Sources */,
+				2F80B9551D00CA3800973479 /* TypePickerClass.swift in Sources */,
+				2F80B9531D00C7B800973479 /* BorrowType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -15,13 +15,15 @@ class Borrow: NSObject, NSCoding {
     var reason:String
     var value:Double
     var currency:Currency
+    var borrowType:BorrowType
     
-    init?(firstname:String, lastname:String, reason:String, value:Double, currency:Currency){
+    init?(firstname:String, lastname:String, reason:String, value:Double, currency:Currency, borrowType:BorrowType){
         self.firstname = firstname
         self.lastname = lastname
         self.reason = reason
         self.value = value
         self.currency = currency
+        self.borrowType = borrowType
         super.init()
     }
     
@@ -33,6 +35,7 @@ class Borrow: NSObject, NSCoding {
         static let reason = "reason"
         static let value = "value"
         static let currency = "currency"
+        static let borrowType = "borrowType"
     }
     
     // Mark: Archiving Paths
@@ -48,6 +51,7 @@ class Borrow: NSObject, NSCoding {
         aCoder.encodeObject(reason, forKey: PropertyKey.reason)
         aCoder.encodeDouble(value, forKey: PropertyKey.value)
         aCoder.encodeObject(currency.rawValue, forKey: PropertyKey.currency)
+        aCoder.encodeObject(borrowType.rawValue, forKey: PropertyKey.borrowType)
     }
     
     required convenience init?(coder aDecoder: NSCoder){
@@ -56,9 +60,11 @@ class Borrow: NSObject, NSCoding {
         let reason = aDecoder.decodeObjectForKey(PropertyKey.reason) as! String
         let value = aDecoder.decodeDoubleForKey(PropertyKey.value) as Double
         let curr = aDecoder.decodeObjectForKey(PropertyKey.currency) as! String
+        let borrowt = aDecoder.decodeObjectForKey(PropertyKey.borrowType) as! String
         
         let currency = Currency(rawValue: curr)!
+        let borrowType = BorrowType(rawValue: borrowt)!
         
-        self.init(firstname: firstname, lastname: lastname, reason: reason, value: value, currency: currency)
+        self.init(firstname: firstname, lastname: lastname, reason: reason, value: value, currency: currency, borrowType: borrowType)
     }
 }

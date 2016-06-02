@@ -47,6 +47,13 @@ class BorrowElementTableViewController: UITableViewController {
         cell.currency.text = borrow.currency.rawValue
         cell.value.text = borrow.value.description
         
+        switch borrow.borrowType {
+        case .Borrowed:
+            cell.value.textColor = UIColor.redColor()
+        case .Lend:
+            cell.value.textColor = UIColor.greenColor()
+        }
+        
         return cell
     }
     
