@@ -117,40 +117,41 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Amount" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XCx-8a-tYY">
-                                <rect key="frame" x="0.0" y="163" width="524" height="30"/>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nIK-4B-mgB">
+                                <rect key="frame" x="0.0" y="224" width="600" height="216"/>
+                            </pickerView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Lastname" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gIV-LO-cdW">
+                                <rect key="frame" x="0.0" y="125" width="600" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oug-9G-0Ae">
-                                <rect key="frame" x="529" y="163" width="63" height="30"/>
-                                <state key="normal" title="Currency"/>
-                            </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Lastname" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gIV-LO-cdW">
-                                <rect key="frame" x="0.0" y="125" width="600" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Amount" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XCx-8a-tYY">
+                                <rect key="frame" x="0.0" y="163" width="600" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Oug-9G-0Ae" firstAttribute="top" secondItem="gIV-LO-cdW" secondAttribute="bottom" constant="8" id="3DN-6K-J54"/>
+                            <constraint firstItem="nIK-4B-mgB" firstAttribute="top" secondItem="XCx-8a-tYY" secondAttribute="bottom" constant="31" id="2kR-ts-F41"/>
                             <constraint firstItem="gIV-LO-cdW" firstAttribute="leading" secondItem="d6R-UH-DMg" secondAttribute="leading" id="7TH-EY-LWh"/>
+                            <constraint firstAttribute="trailing" secondItem="XCx-8a-tYY" secondAttribute="trailing" id="9iL-iE-YtO"/>
                             <constraint firstAttribute="trailing" secondItem="1uJ-1R-tCA" secondAttribute="trailing" id="BAk-KT-UzS"/>
                             <constraint firstAttribute="trailing" secondItem="iEg-xp-iTF" secondAttribute="trailing" id="BaZ-QR-hcI"/>
-                            <constraint firstAttribute="trailing" secondItem="Oug-9G-0Ae" secondAttribute="trailing" constant="8" id="DBP-Hb-rcz"/>
                             <constraint firstItem="gIV-LO-cdW" firstAttribute="top" secondItem="iEg-xp-iTF" secondAttribute="bottom" constant="8" id="DEl-G8-Pu1"/>
+                            <constraint firstItem="nIK-4B-mgB" firstAttribute="leading" secondItem="d6R-UH-DMg" secondAttribute="leading" id="G2a-bZ-lZx"/>
                             <constraint firstItem="XCx-8a-tYY" firstAttribute="leading" secondItem="d6R-UH-DMg" secondAttribute="leading" id="MBB-T6-UNE"/>
+                            <constraint firstAttribute="trailing" secondItem="nIK-4B-mgB" secondAttribute="trailing" id="OK1-Mq-ArS"/>
                             <constraint firstItem="1uJ-1R-tCA" firstAttribute="leading" secondItem="d6R-UH-DMg" secondAttribute="leading" id="WcZ-lA-tYd"/>
                             <constraint firstAttribute="trailing" secondItem="gIV-LO-cdW" secondAttribute="trailing" id="bsa-f0-P9W"/>
                             <constraint firstItem="1uJ-1R-tCA" firstAttribute="top" secondItem="VWT-re-GMy" secondAttribute="bottom" id="fV3-Fy-cWW"/>
                             <constraint firstItem="XCx-8a-tYY" firstAttribute="top" secondItem="gIV-LO-cdW" secondAttribute="bottom" constant="8" id="g34-DO-Y1h"/>
-                            <constraint firstItem="Oug-9G-0Ae" firstAttribute="leading" secondItem="XCx-8a-tYY" secondAttribute="trailing" constant="5" id="gkY-8o-thT"/>
                             <constraint firstItem="iEg-xp-iTF" firstAttribute="top" secondItem="1uJ-1R-tCA" secondAttribute="bottom" constant="23" id="kub-fq-ET4"/>
                             <constraint firstItem="iEg-xp-iTF" firstAttribute="leading" secondItem="d6R-UH-DMg" secondAttribute="leading" id="wpS-tM-Mda"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="currencyPicker" destination="nIK-4B-mgB" id="ZGG-76-cow"/>
                         <outlet property="firstnameText" destination="iEg-xp-iTF" id="UcT-AC-CUv"/>
                         <outlet property="lastnameText" destination="gIV-LO-cdW" id="PkK-PL-cI3"/>
                         <outlet property="valueText" destination="XCx-8a-tYY" id="3T9-EE-Wb8"/>
@@ -158,7 +159,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0mK-2G-fec" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="965" y="356"/>
+            <point key="canvasLocation" x="977" y="356"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ToM-P2-6jd">
