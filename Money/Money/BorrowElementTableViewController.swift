@@ -13,18 +13,21 @@ class BorrowElementTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         loadBorrows()
-        
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-        
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
     
-    var borrows = [Borrow]()
+    var borrows:[Borrow]? = [Borrow]()
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return borrows.count
+        guard let list = borrows else {
+            return 0
+        }
+        return list.count
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        loadBorrows()
+        print(borrows)
+        tableView.reloadData()
     }
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -36,7 +39,7 @@ class BorrowElementTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! BorrowElementCell
         
         // Configure the cell...
-        let borrow = borrows[indexPath.row]
+        let borrow = borrows![indexPath.row]
         
         cell.firstname.text = borrow.firstname
         cell.lastname.text = borrow.lastname
@@ -47,9 +50,7 @@ class BorrowElementTableViewController: UITableViewController {
     }
     
     func loadBorrows() -> () {
-        borrows.append(Borrow(firstname: "Hans", lastname: "Joachim", value: 12.90, currency: .CHF))
-        borrows.append(Borrow(firstname: "Sepp", lastname: "Blatter", value: 30000.05, currency: .CHF))
-        borrows.append(Borrow(firstname: "Julia", lastname: "Bachmann", value: 1.00, currency: .CHF))
+        borrows = NSKeyedUnarchiver.unarchiveObjectWithFile(Borrow.ArchiveURL.path!) as? [Borrow]
     }
 
 }

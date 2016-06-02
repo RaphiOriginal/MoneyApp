@@ -62,18 +62,34 @@
 		2F80B92F1D0049CE00973479 /* Money */ = {
 			isa = PBXGroup;
 			children = (
+				2F80B9511D007F7A00973479 /* Controller */,
+				2F80B9501D007F6500973479 /* Model */,
 				2F80B9301D0049CE00973479 /* AppDelegate.swift */,
-				2F80B94A1D0060B100973479 /* BorrowElementTableViewController.swift */,
-				2F80B9441D00564E00973479 /* Borrow.swift */,
-				2F80B9461D00569B00973479 /* Currency.swift */,
 				2F80B9341D0049CE00973479 /* Main.storyboard */,
-				2F80B94E1D0067B900973479 /* CreateBorrowController.swift */,
-				2F80B9421D0051E400973479 /* BorrowElementCell.swift */,
 				2F80B9371D0049CE00973479 /* Assets.xcassets */,
 				2F80B9391D0049CE00973479 /* LaunchScreen.storyboard */,
 				2F80B93C1D0049CE00973479 /* Info.plist */,
 			);
 			path = Money;
+			sourceTree = "<group>";
+		};
+		2F80B9501D007F6500973479 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				2F80B9441D00564E00973479 /* Borrow.swift */,
+				2F80B9461D00569B00973479 /* Currency.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		2F80B9511D007F7A00973479 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				2F80B94A1D0060B100973479 /* BorrowElementTableViewController.swift */,
+				2F80B94E1D0067B900973479 /* CreateBorrowController.swift */,
+				2F80B9421D0051E400973479 /* BorrowElementCell.swift */,
+			);
+			name = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

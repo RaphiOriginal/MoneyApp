@@ -10,6 +10,7 @@ import UIKit
 
 class CreateBorrowController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
     
+    var borrows:[Borrow]? = []
     var pickerList:[Currency] = [.CHF, .$, .€]
     
     @IBOutlet weak var firstnameText: UITextField!
@@ -37,7 +38,8 @@ class CreateBorrowController: UIViewController, UIPickerViewDataSource, UIPicker
         let curr = currencyPicker.selectedRowInComponent(0)
         
         let borrow = Borrow(firstname: firstname, lastname: lastname, value: val, currency: pickerList[curr])
-        print(borrow.firstname)
+        borrows?.insert(borrow!, atIndex: 0)
+        saveBorrows()
         dismissViewControllerAnimated(true, completion: nil)
     }
     
@@ -45,6 +47,8 @@ class CreateBorrowController: UIViewController, UIPickerViewDataSource, UIPicker
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        loadBorrows()
         
         self.currencyPicker.dataSource = self
         self.currencyPicker.delegate = self
@@ -64,5 +68,24 @@ class CreateBorrowController: UIViewController, UIPickerViewDataSource, UIPicker
     
     func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return pickerList[row].rawValue
+    }
+    
+    // Mark: NSCoding
+    
+    func saveBorrows() {
+        var brws:[Borrow]
+        if let list = borrows {
+            brws = list
+        } else {
+            brws = [Borrow]()
+        }
+        let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(brws, toFile: Borrow.ArchiveURL.path!)
+        if(!isSuccessfulSave){
+            print("Failed Storing Borrows")
+        }
+    }
+    
+    func loadBorrows() {
+        borrows = NSKeyedUnarchiver.unarchiveObjectWithFile(Borrow.ArchiveURL.path!) as? [Borrow]
     }
 }
