@@ -111,9 +111,9 @@ class BorrowElementTableViewController: UITableViewController, UIActivityItemSou
         
         switch borrow.borrowType {
         case .Borrowed:
-            textToShare = "Borrowed from \(borrow.firstname) \(borrow.lastname) \(borrow.value) \(borrow.currency.rawValue)"
+            textToShare = "Borrowed from \(borrow.firstname) \(borrow.lastname) \(borrow.value)\(borrow.currency.rawValue) for \(borrow.reason)"
         case .Lend:
-            textToShare = "Lend to \(borrow.firstname) \(borrow.lastname) \(borrow.value) \(borrow.currency.rawValue)"
+            textToShare = "Lend to \(borrow.firstname) \(borrow.lastname) \(borrow.value)\(borrow.currency.rawValue) for \(borrow.reason)"
         }
         
         switch activityType {
