@@ -130,7 +130,7 @@ class BorrowElementTableViewController: UITableViewController, UIActivityItemSou
             return textToShare
             
         default:
-            return "Money"
+            return textToShare
         }
     }
     

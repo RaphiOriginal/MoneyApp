@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CreateBorrowController: UIViewController {
+class CreateBorrowController: UIViewController, UITextFieldDelegate {
     
     var borrows:[Borrow]? = []
     var borrowTypeController = TypePickerClass()
@@ -50,12 +50,20 @@ class CreateBorrowController: UIViewController {
         dismissViewControllerAnimated(true, completion: nil)
     }
     
-    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return false
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         loadBorrows()
+        
+        self.firstnameText.delegate = self
+        self.lastnameText.delegate = self
+        self.valueText.delegate = self
+        self.reasonText.delegate = self
         
         self.currencyPicker.dataSource = currencyController
         self.currencyPicker.delegate = currencyController
