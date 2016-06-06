@@ -23,6 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2F1C69E41D05FA74004E5AB9 /* MoneyShare.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = MoneyShare.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F80B92D1D0049CE00973479 /* Money.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Money.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F80B9301D0049CE00973479 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2F80B9351D0049CE00973479 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -41,6 +42,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		2F1C69E11D05FA74004E5AB9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		2F80B92A1D0049CE00973479 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -63,6 +71,7 @@
 			isa = PBXGroup;
 			children = (
 				2F80B92D1D0049CE00973479 /* Money.app */,
+				2F1C69E41D05FA74004E5AB9 /* MoneyShare.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -115,6 +124,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		2F1C69E31D05FA74004E5AB9 /* MoneyShare */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2F1C69F11D05FA74004E5AB9 /* Build configuration list for PBXNativeTarget "MoneyShare" */;
+			buildPhases = (
+				2F1C69E01D05FA74004E5AB9 /* Sources */,
+				2F1C69E11D05FA74004E5AB9 /* Frameworks */,
+				2F1C69E21D05FA74004E5AB9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MoneyShare;
+			productName = MoneyShare;
+			productReference = 2F1C69E41D05FA74004E5AB9 /* MoneyShare.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		2F80B92C1D0049CE00973479 /* Money */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2F80B93F1D0049CE00973479 /* Build configuration list for PBXNativeTarget "Money" */;
@@ -142,6 +168,10 @@
 				LastUpgradeCheck = 0730;
 				ORGANIZATIONNAME = "Raphael Brunner";
 				TargetAttributes = {
+					2F1C69E31D05FA74004E5AB9 = {
+						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = WSJ5T79UYZ;
+					};
 					2F80B92C1D0049CE00973479 = {
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = WSJ5T79UYZ;
@@ -162,11 +192,19 @@
 			projectRoot = "";
 			targets = (
 				2F80B92C1D0049CE00973479 /* Money */,
+				2F1C69E31D05FA74004E5AB9 /* MoneyShare */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		2F1C69E21D05FA74004E5AB9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		2F80B92B1D0049CE00973479 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -180,6 +218,13 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		2F1C69E01D05FA74004E5AB9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		2F80B9291D0049CE00973479 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -219,6 +264,28 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		2F1C69EF1D05FA74004E5AB9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = MoneyShare/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = ch.raphaelbrunner.Money.MoneyShare;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		2F1C69F01D05FA74004E5AB9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = MoneyShare/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = ch.raphaelbrunner.Money.MoneyShare;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
 		2F80B93D1D0049CE00973479 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -327,6 +394,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		2F1C69F11D05FA74004E5AB9 /* Build configuration list for PBXNativeTarget "MoneyShare" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2F1C69EF1D05FA74004E5AB9 /* Debug */,
+				2F1C69F01D05FA74004E5AB9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		2F80B9281D0049CE00973479 /* Build configuration list for PBXProject "Money" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -343,6 +418,7 @@
 				2F80B9411D0049CE00973479 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
