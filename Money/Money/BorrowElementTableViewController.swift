@@ -76,7 +76,7 @@ class BorrowElementTableViewController: UITableViewController, UIActivityItemSou
             self.saveBorrows()
         }
         
-        let moreClosure = { (action: UITableViewRowAction!, indexPath: NSIndexPath!) -> Void in
+        let shareClosure = { (action: UITableViewRowAction!, indexPath: NSIndexPath!) -> Void in
             self.selectedBorrow = self.borrows![indexPath.row]
             
             let activityVC = UIActivityViewController(activityItems: [self], applicationActivities: nil)
@@ -88,10 +88,10 @@ class BorrowElementTableViewController: UITableViewController, UIActivityItemSou
         }
         
         let deleteAction = UITableViewRowAction(style: .Default, title: "Delete", handler: deleteClosure)
-        let moreAction = UITableViewRowAction(style: .Normal, title: "Share", handler: moreClosure)
-        moreAction.backgroundColor = UIColor.blueColor()
+        let shareAction = UITableViewRowAction(style: .Normal, title: "Share", handler: shareClosure)
+        shareAction.backgroundColor = UIColor.blueColor()
         
-        return [deleteAction, moreAction]
+        return [deleteAction, shareAction]
     }
     
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
