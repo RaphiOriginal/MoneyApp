@@ -38,6 +38,10 @@ class CreateBorrowController: UIViewController, UITextFieldDelegate{
         guard let value = valueText.text else {
             return
         }
+        if firstname == "" || lastname == "" || reason == "" {
+            alert("Please complete all Inputfields!")
+            return
+        }
         guard let val = Double.init(value) else {
             alert("Missing Value!")
             return
@@ -46,12 +50,6 @@ class CreateBorrowController: UIViewController, UITextFieldDelegate{
             return
         }
         guard let borrowt = typePickerField.text else {
-            return
-        }
-        
-        
-        if firstname == "" || lastname == "" || reason == "" {
-            alert("Please complete all Inputfields!")
             return
         }
         
