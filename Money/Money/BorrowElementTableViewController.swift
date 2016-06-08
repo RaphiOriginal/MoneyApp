@@ -113,7 +113,7 @@ class BorrowElementTableViewController: UITableViewController, UIActivityItemSou
         case .Borrowed:
             textToShare = "Borrowed from \(borrow.firstname) \(borrow.lastname) \(String(format: "%.2f", borrow.value))\(borrow.currency.rawValue) for \(borrow.reason)"
         case .Lend:
-            textToShare = "Lend to \(borrow.firstname) \(borrow.lastname) \(String(format: "%.2f", borrow.value))\(borrow.currency.rawValue) for \(borrow.reason)"
+            textToShare = "Lent to \(borrow.firstname) \(borrow.lastname) \(String(format: "%.2f", borrow.value))\(borrow.currency.rawValue) for \(borrow.reason)"
         }
         
         switch activityType {
