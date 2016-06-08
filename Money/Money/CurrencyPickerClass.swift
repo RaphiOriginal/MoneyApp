@@ -12,6 +12,7 @@ import UIKit
 class CurrencyPickerClass: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
     
     var pickerList:[Currency] = [.CHF, .$, .€]
+    var textField:UITextField?
     
     // MARK: - UIPickerViewDataSource
     func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
@@ -28,7 +29,7 @@ class CurrencyPickerClass: UIViewController, UIPickerViewDataSource, UIPickerVie
         return pickerList[row].rawValue
     }
     
-    func getPos(pos:Int) -> Currency {
-        return pickerList[pos]
+    func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        textField?.text = pickerList[row].rawValue
     }
 }

@@ -11,6 +11,7 @@ import UIKit
 
 class TypePickerClass: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
     var borrowList:[BorrowType] = [.Borrowed, .Lend]
+    var textField:UITextField?
     
     
     // MARK: - UIPickerViewDataSource
@@ -28,7 +29,7 @@ class TypePickerClass: UIViewController, UIPickerViewDataSource, UIPickerViewDel
         return borrowList[row].rawValue
     }
     
-    func getPos(pos:Int) -> BorrowType{
-        return borrowList[pos]
+    func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        textField?.text = borrowList[row].rawValue
     }
 }

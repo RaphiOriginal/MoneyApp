@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CreateBorrowController: UIViewController, UITextFieldDelegate {
+class CreateBorrowController: UIViewController, UITextFieldDelegate{
     
     var borrows:[Borrow]? = []
     var borrowTypeController = TypePickerClass()
@@ -18,8 +18,8 @@ class CreateBorrowController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var lastnameText: UITextField!
     @IBOutlet weak var reasonText: UITextField!
     @IBOutlet weak var valueText: UITextField!
-    @IBOutlet weak var currencyPicker: UIPickerView!
-    @IBOutlet weak var typePicker: UIPickerView!
+    @IBOutlet weak var currencyPickerField: UITextField!
+    @IBOutlet weak var typePickerField: UITextField!
     
  
     @IBAction func cancel(sender: UIBarButtonItem) {
@@ -41,10 +41,14 @@ class CreateBorrowController: UIViewController, UITextFieldDelegate {
         guard let val = Double.init(value) else {
             return
         }
-        let curr = currencyPicker.selectedRowInComponent(0)
-        let borrowt = typePicker.selectedRowInComponent(0)
+        guard let curr = currencyPickerField.text else {
+            return
+        }
+        guard let borrowt = typePickerField.text else {
+            return
+        }
         
-        let borrow = Borrow(firstname: firstname, lastname: lastname, reason: reason, value: val.trimValue(), currency: currencyController.getPos(curr), borrowType: borrowTypeController.getPos(borrowt))
+        let borrow = Borrow(firstname: firstname, lastname: lastname, reason: reason, value: val.trimValue(), currency: Currency(rawValue: curr)!, borrowType: BorrowType(rawValue: borrowt)!)
         borrows?.insert(borrow!, atIndex: 0)
         saveBorrows()
         dismissViewControllerAnimated(true, completion: nil)
@@ -60,16 +64,23 @@ class CreateBorrowController: UIViewController, UITextFieldDelegate {
         
         loadBorrows()
         
+        let currencyPickerView = UIPickerView()
+        let typePickerView = UIPickerView()
+        
+        currencyPickerView.delegate = currencyController
+        typePickerView.delegate = borrowTypeController
+        
+        currencyController.textField = currencyPickerField
+        borrowTypeController.textField = typePickerField
+        
+        currencyPickerField.inputView = currencyPickerView
+        typePickerField.inputView = typePickerView
+        
+        
         self.firstnameText.delegate = self
         self.lastnameText.delegate = self
         self.valueText.delegate = self
         self.reasonText.delegate = self
-        
-        self.currencyPicker.dataSource = currencyController
-        self.currencyPicker.delegate = currencyController
-        
-        self.typePicker.delegate = borrowTypeController
-        self.typePicker.dataSource = borrowTypeController
     }
     
     // Mark: NSCoding
