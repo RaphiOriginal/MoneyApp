@@ -13,7 +13,6 @@ class TypePickerClass: UIViewController, UIPickerViewDataSource, UIPickerViewDel
     var borrowList:[BorrowType] = [.Borrowed, .Lend]
     var textField:UITextField?
     
-    
     // MARK: - UIPickerViewDataSource
     func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
         return 1
@@ -31,5 +30,13 @@ class TypePickerClass: UIViewController, UIPickerViewDataSource, UIPickerViewDel
     
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         textField?.text = borrowList[row].rawValue
+    }
+    
+    func getInitial() -> String? {
+        return borrowList[0].rawValue
+    }
+    
+    func donePicker() {
+        textField?.resignFirstResponder()
     }
 }

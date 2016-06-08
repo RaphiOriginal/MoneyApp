@@ -67,6 +67,26 @@ class CreateBorrowController: UIViewController, UITextFieldDelegate{
         let currencyPickerView = UIPickerView()
         let typePickerView = UIPickerView()
         
+        let toolbarCurr = UIToolbar()
+        toolbarCurr.barStyle = UIBarStyle.Default
+        toolbarCurr.translucent = true
+        toolbarCurr.sizeToFit()
+        
+        let toolbarBorrow = UIToolbar()
+        toolbarBorrow.barStyle = UIBarStyle.Default
+        toolbarBorrow.translucent = true
+        toolbarBorrow.sizeToFit()
+        
+        let space = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.FlexibleSpace, target: nil, action: nil)
+        let doneCurrency = UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.Plain, target: currencyController, action: "donePicker")
+        let doneBorrow = UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.Plain, target: borrowTypeController, action: "donePicker")
+        
+        toolbarCurr.setItems([space, doneCurrency], animated: false)
+        toolbarCurr.userInteractionEnabled = true
+        
+        toolbarBorrow.setItems([space, doneBorrow], animated: false)
+        toolbarBorrow.userInteractionEnabled = true
+        
         currencyPickerView.delegate = currencyController
         typePickerView.delegate = borrowTypeController
         
@@ -75,6 +95,15 @@ class CreateBorrowController: UIViewController, UITextFieldDelegate{
         
         currencyPickerField.inputView = currencyPickerView
         typePickerField.inputView = typePickerView
+        
+        typePickerField.text = borrowTypeController.getInitial()
+        currencyPickerField.text = currencyController.getInitial()
+        
+        currencyPickerField.inputAccessoryView = toolbarCurr
+        typePickerField.inputAccessoryView = toolbarBorrow
+        
+        currencyPickerView.selectRow(0, inComponent: 0, animated: true)
+        typePickerView.selectRow(0, inComponent: 0, animated: true)
         
         
         self.firstnameText.delegate = self

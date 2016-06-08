@@ -32,4 +32,13 @@ class CurrencyPickerClass: UIViewController, UIPickerViewDataSource, UIPickerVie
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         textField?.text = pickerList[row].rawValue
     }
+    
+    func getInitial() -> String? {
+        return pickerList[0].rawValue
+    }
+    
+    func donePicker() {
+        print("yolo")
+        textField?.resignFirstResponder()
+    }
 }
