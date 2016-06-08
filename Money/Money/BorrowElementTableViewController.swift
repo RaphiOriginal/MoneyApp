@@ -46,7 +46,7 @@ class BorrowElementTableViewController: UITableViewController, UIActivityItemSou
         cell.lastname.text = borrow.lastname
         cell.reason.text = borrow.reason
         cell.currency.text = borrow.currency.rawValue
-        cell.value.text = borrow.value.description
+        cell.value.text = String(format: "%.2f", borrow.value)
         
         switch borrow.borrowType {
         case .Borrowed:
