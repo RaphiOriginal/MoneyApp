@@ -38,7 +38,6 @@ class CurrencyPickerClass: UIViewController, UIPickerViewDataSource, UIPickerVie
     }
     
     func donePicker() {
-        print("yolo")
         textField?.resignFirstResponder()
     }
 }

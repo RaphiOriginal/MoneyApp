@@ -39,12 +39,19 @@ class CreateBorrowController: UIViewController, UITextFieldDelegate{
             return
         }
         guard let val = Double.init(value) else {
+            alert("Missing Value!")
             return
         }
         guard let curr = currencyPickerField.text else {
             return
         }
         guard let borrowt = typePickerField.text else {
+            return
+        }
+        
+        
+        if firstname == "" || lastname == "" || reason == "" {
+            alert("Please complete all Inputfields!")
             return
         }
         
@@ -129,5 +136,13 @@ class CreateBorrowController: UIViewController, UITextFieldDelegate{
     
     func loadBorrows() {
         borrows = NSKeyedUnarchiver.unarchiveObjectWithFile(Borrow.ArchiveURL.path!) as? [Borrow]
+    }
+    
+    // Mark: Alert
+    
+    func alert(message: String?){
+        let alert = UIAlertController(title: "Error", message: message, preferredStyle: UIAlertControllerStyle.Alert)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
+        self.presentViewController(alert, animated: true, completion: nil)
     }
 }
